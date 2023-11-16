@@ -3,45 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Caculator</title>
+    <meta name="description" content="frontend mentor age Calculator">
+    <meta name="keywords" content="HTML, CSS, JavaScript, chingu, scrimba, frontend mentor">
+    <meta name="author" content="Hector Gracia, Emmett Pennington">
+    <title>Age Pro Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="title">
+        <header class="title">
             <i class="fas fa-calculator purple"></i> <h1 class="title">Age Pro</h1>  
-        </div>
+        </header>
         
-        <div class="form">
-            <div class="input">
-                <label for="day">DAY</label>
-                <input id="day-el" type="number" class="box" placeholder="24" min="1" max="31">
+        <form action="#" class="form">
+            <div class="form-top">
+                <div class="input">
+                    <label for="day">DAY</label>
+                    <input id="day-el" type="number" placeholder="24" min="01" max="31" required>
+                </div>
+                <div class="input">
+                    <label for="month">MONTH</label>
+                    <input id="month-el" type="number" placeholder="09" min="1" max="12" required>                
+                </div>
+                <div class="input">
+                    <label for="year">YEAR</label>
+                    <input id="year-el" type="number" placeholder="1984" maxlength="4" pattern="\d{4}" required title="Please enter a four-digit year">
+                </div>   
             </div>
-            <div class="input">
-                <label for="day">MONTH</label>
-                <input id="month-el" type="number" class="box" placeholder="09" min="1" max="12">                
-            </div>
-            <div class="input">
-                <label for="day">YEAR</label>
-                <input id="year-el" type="number" class="box" placeholder="1984" maxlength="4"pattern="\d{4}" required title="Please enter a four-digit year">
-            </div>            
-        </div>
-            
-        <div class="middle">
-            <i class="fa-solid fa-circle-down fa-3x purple"></i> <p>click here</p>
-        </div>
+
+            <div class="form-mid">
+                <span class="submit-line"></span>
+                <button type="submit" class="submit-button" aria-label="Submit">
+                    <img src="/images/icon-arrow.svg" alt="" class="logo">
+                </button>
+            </div> 
+        </form> 
 
         <div class="result">
-            <p id="year-el"><span class="purple">38</span> years</p>
-            <p id="month-el"><span class="purple">3</span> months</p>
-            <p id="day-el"><span class="purple">26</span> days</p>
+            <p id="year-result-el"><span class="purple">38</span>  years</p>
+            <p id="month-result-el"><span class="purple">3</span>  months</p>
+            <p id="day-result-el"><span class="purple">26</span>  days</p>
+        </div>        
+    </div>
+
+    <footer class="footer">
+        <div>
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><img src="https://www.frontendmentor.io/static/images/logo-desktop.svg" alt="front end mentor logo" class="footer-logo"></a>.
         </div>
 
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="#"><a href="https://www.linkedin.com/in/hectorgarcia01/" target="_blank">Hector Gracia</a> & <a href="https://github.com/egpennington" target="_blank">Emmett Pennington</a>.
-          </div>
-    </div>   
+        <div>
+            Coded by <a href="https://www.linkedin.com/in/hectorgarcia01/" target="_blank"><i class="fa-brands fa-linkedin"></i> Hector Gracia</a> & <a href="https://github.com/egpennington" target="_blank"><i class="fa-brands fa-github"></i> Emmett Pennington</a>.
+            &copy; 2023
+        </div>
+    </footer>
+   
 </body>
 </html>
