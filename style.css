@@ -1,3 +1,13 @@
+:root {
+    --main-font-family: 'Poppins', sans-serif;
+    --main-color: #854dff;
+    --light-red: #ff5757;
+    --off-white: #f0f0f0;
+    --light-grey: #dbdbdb;
+    --smoke-grey: #716f6f;
+    --off-black: #141414;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,34 +16,49 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
-    color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--off-white);
+    color: var(--off-black);
+    font-family: var(--main-font-family);
     height: 100vh;
+    user-select: none;
+}
+
+/* Utilities */
+.txt-sm {
+    font-size: 0.7rem;
+}
+
+.purple {
+    color: var(--main-color);
 }
 
 .container {
-    max-width: 468px;
-    margin: 20px auto;
+    background: #fff;
+    width: 1024px;
+    margin: auto;
     padding: 10px;
-    border: 1px #333 solid;
-    border-radius: 8px;
+    border: none;
+    border-radius: 20px 20px 70px 20px;
+    overflow: hidden;
 }
 
 .title {
+    background: var(--off-black);
+    color: #fff;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 20px;
-    padding: 20px;
+    border-radius: 10px 10px 0 0;
 }
 
 .title i {
-    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .title img {
@@ -42,61 +67,147 @@ body {
     border-radius: 5%;
 }
 
-.form {
-    display: flex;
+form {
+    width: 100%;
+    position: relative;
+}
+
+.form-top {
+    display: flex;    
     justify-content: center;
     align-items: center;
 }
 
-form {
-    border: 2px solid #333;
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    font-weight: bold;
-    padding: 15px;
-    text-align: left;
-    margin-top: 10px;
+label {
+    width: 50px;
+    color: var(--smoke-grey);
+    font-size: 0.8rem;
 }
 
 .input {
     margin-right: 10px;
-    padding: 10px 20px;
+    width: 175px;
+    padding: 10px;    
 }
 
 .input input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     width: 100%;
-    box-sizing: border-box;
+    padding: 15px 20px 15px;
+    font-size: 2rem;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.middle {
+.input input::placeholder {
+    color: var(--off-black);
+    font-weight: 800;
+    
+}
+
+#year-el {
+    width: 100%;
+    padding: 15px 20px 15px;    
+    border-radius: 5px;
+    cursor: pointer;
+    /* Hide the increment and decrement arrows in WebKit browsers */
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+#year-el::-webkit-outer-spin-button,
+#year-el::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-mid {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 20px auto;
+    margin: 25px auto;
 }
 
-.middle i {
-    vertical-align: middle;
-    margin-bottom: 5px;
+.submit-line {
+    height: 2px;
+    width: 70%;
+    background: #ccc;
     margin-right: 10px;
+    margin-top: 20px;
 }
 
-.middle i:hover {
+.submit-button {
+    background: var(--main-color);
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    position: absolute;
+    bottom: -35px;
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+.submit-button:hover {
     opacity: 0.7;
 }
 
 .result {
-    text-align: center;
-    margin: 15px auto;
-    font-size: 2rem;
-    font-style: italic;
-    font-weight: bold;
+    margin-top: 50px;
 }
 
-.purple {
-    color: #8338ec;
+.result p {
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 800;
+    text-align: left;
+    margin: 10px auto;
+    width: 70%;
+    line-height: 1;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    color: #333;    
+    padding: 10px 15px;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.8rem;
+}
+
+.footer-logo {
+    height: 1.1rem;
+}
+
+.footer-logo:hover {
+    opacity: 0.6;
+}
+
+.footer a:hover {
+    color: var(--main-color);
+    opacity: 0.6;
+}
+
+/* Media queries for larger screens */
+@media(max-width: 468px) {
+    .container {
+        width: 375px;
+        height: 100vh;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .input input {
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        left: 50%;
+    }
 }
