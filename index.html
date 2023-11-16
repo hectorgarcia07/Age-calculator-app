@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Age calculator app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Caculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="title">
+            <i class="fas fa-calculator purple"></i> <h1 class="title">Age Pro</h1>  
+        </div>
+        
+        <div class="form">
+            <div class="input">
+                <label for="day">DAY</label>
+                <input id="day-el" type="number" class="box" placeholder="24" min="1" max="31">
+            </div>
+            <div class="input">
+                <label for="day">MONTH</label>
+                <input id="month-el" type="number" class="box" placeholder="09" min="1" max="12">                
+            </div>
+            <div class="input">
+                <label for="day">YEAR</label>
+                <input id="year-el" type="number" class="box" placeholder="1984" maxlength="4"pattern="\d{4}" required title="Please enter a four-digit year">
+            </div>            
+        </div>
+            
+        <div class="middle">
+            <i class="fa-solid fa-circle-down fa-3x purple"></i> <p>click here</p>
+        </div>
 
-  
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  <script src="main.js"></script>
+        <div class="result">
+            <p id="year-el"><span class="purple">38</span> years</p>
+            <p id="month-el"><span class="purple">3</span> months</p>
+            <p id="day-el"><span class="purple">26</span> days</p>
+        </div>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#"><a href="https://www.linkedin.com/in/hectorgarcia01/" target="_blank">Hector Gracia</a> & <a href="https://github.com/egpennington" target="_blank">Emmett Pennington</a>.
+          </div>
+    </div>   
 </body>
 </html>
