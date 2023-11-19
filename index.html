@@ -24,33 +24,37 @@
             <div class="form-top">
                 <div class="input">
                     <label for="day">DAY</label>
-                    <input id="day-el" type="number" placeholder="24" min="01" max="31" required>
+                    <input name="day" id="day-el" type="text" placeholder="DD" maxlength="2" pattern="\b([1-9]|[12][0-9]|3[01])\b" required title="Please enter a two-digit day">
+                    <p id="day-error-msg">This field is required</p>
                 </div>
                 <div class="input">
                     <label for="month">MONTH</label>
-                    <input id="month-el" type="number" placeholder="09" min="1" max="12" required>                
+                    <input name="month" id="month-el" type="text" placeholder="MM" maxlength="2" pattern="\b([1-9]|1[0-2])\b" required title="Please enter a two-digit month">    
+                    <p id="month-error-msg">This field is required</p>
+            
                 </div>
                 <div class="input">
                     <label for="year">YEAR</label>
-                    <input id="year-el" type="number" placeholder="1984" maxlength="4" pattern="\d{4}" required title="Please enter a four-digit year">
+                    <input name="year" id="year-el" type="text" placeholder="YYYY" maxlength="4" required title="Please enter a four-digit year">
+                    <p id="year-error-msg">This field is required</p>
                 </div>   
             </div>
 
             <div class="form-mid">
                 <span class="submit-line"></span>
                 <button type="submit" class="submit-button" aria-label="Submit">
-                    <img src="/images/icon-arrow.svg" alt="" class="logo">
+                    <img src="./assets/images/icon-arrow.svg" alt="" class="logo">
                 </button>
             </div> 
         </form> 
 
         <div class="result">
-            <p id="year-result-el"><span class="purple">38</span>  years</p>
-            <p id="month-result-el"><span class="purple">3</span>  months</p>
-            <p id="day-result-el"><span class="purple">26</span>  days</p>
+            <p id="year-result-el"><span class="purple">--</span>  years</p>
+            <p id="month-result-el"><span class="purple">--</span>  months</p>
+            <p id="day-result-el"><span class="purple">--</span>  days</p>
         </div>        
     </div>
-    <script src="main.js"></script>
+    
 <!-- 
     <footer class="footer">
         <div>

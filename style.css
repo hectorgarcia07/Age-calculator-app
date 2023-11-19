@@ -105,6 +105,10 @@ label {
     
 }
 
+input:invalid{
+    border-color: red;
+}
+
 #year-el {
     width: 100%;
     padding: 15px 20px 15px;    
@@ -114,6 +118,11 @@ label {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
+}
+
+#day-error-msg, #month-error-msg, #year-error-msg{
+    color: red;
+    
 }
 
 #year-el::-webkit-outer-spin-button,
