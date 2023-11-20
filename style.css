@@ -125,6 +125,12 @@ input:invalid{
     
 }
 
+input:valid + p{
+    visibility: hidden;
+    color: green;
+    
+}
+
 #year-el::-webkit-outer-spin-button,
 #year-el::-webkit-inner-spin-button {
     -webkit-appearance: none;
