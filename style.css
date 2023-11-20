@@ -125,9 +125,10 @@ input:invalid{
     
 }
 
-input:valid + p{
+input:valid + #day-error-msg,
+input:valid + #month-error-msg,
+input:valid + #year-error-msg{
     visibility: hidden;
-    color: green;
     
 }
 
