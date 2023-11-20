@@ -13,53 +13,53 @@ const dayBorn = document.getElementById("day-born")
 
 // Function to check if a date is valid
 function isDateValid(event) {
-    console.log(event.target.id);
+    console.log(event.target.id)
 
     switch (event.target.id) {
         case 'day-el':
-            let enteredDay = parseInt(event.target.value, 10);
+            let enteredDay = parseInt(event.target.value, 10)
 
             if (!isNaN(enteredDay) && enteredDay >= 1 && enteredDay <= 31) {
-                console.log("Valid day");
+                console.log("Valid day")
                 // Clear or hide the error message
                 clearErrorMessage(event.target);
             } else {
                 console.log("Not a valid day");
                 // Display or show the error message
-                displayErrorMessage(event.target, "Not a valid day");
+                displayErrorMessage(event.target, "Not a valid day")
             }
-            break;
+            break
 
         case 'month-el':
-            let enteredMonth = parseInt(event.target.value, 10);
+            let enteredMonth = parseInt(event.target.value, 10)
 
             if (!isNaN(enteredMonth) && enteredMonth >= 1 && enteredMonth <= 12) {
-                console.log("Valid month");
+                console.log("Valid month")
                 // Clear or hide the error message
-                clearErrorMessage(event.target);
+                clearErrorMessage(event.target)
             } else {
-                console.log("Not a valid month");
+                console.log("Not a valid month")
                 // Display or show the error message
-                displayErrorMessage(event.target, "Not a valid month");
+                displayErrorMessage(event.target, "Not a valid month")
             }
-            break;
+            break
 
         case 'year-el':
-            let enteredYear = parseInt(event.target.value, 10);
+            let enteredYear = parseInt(event.target.value, 10)
 
             if (!isNaN(enteredYear) && enteredYear >= 1000 && enteredYear <= 9999) {
-                console.log("Valid year");
+                console.log("Valid year")
                 // Clear or hide the error message
-                clearErrorMessage(event.target);
+                clearErrorMessage(event.target)
             } else {
-                console.log("Not a valid year");
+                console.log("Not a valid year")
                 // Display or show the error message
-                displayErrorMessage(event.target, "Not a valid year");
+                displayErrorMessage(event.target, "Not a valid year")
             }
-            break;
+            break
 
         default:
-            break;
+            break
     }
 
     updateDayOfWeek() // to update day of week if input is  changed
@@ -69,20 +69,20 @@ function isDateValid(event) {
 // Function to clear or hide the error message
 function clearErrorMessage(inputElement) {
     // Remove the 'showing' class from the error message
-    inputElement.nextElementSibling.classList.remove('showing');
+    inputElement.nextElementSibling.classList.remove('showing')
 }
 
 // Function to display or show the error message
 function displayErrorMessage(inputElement, message) {
     // Add the 'showing' class to the error message
-    inputElement.nextElementSibling.textContent = message;
-    inputElement.nextElementSibling.classList.add('showing');
+    inputElement.nextElementSibling.textContent = message
+    inputElement.nextElementSibling.classList.add('showing')
 }
 
 // Event listeners for input changes
-year.addEventListener("input", (e) => isDateValid(e));
-month.addEventListener("input", (e) => isDateValid(e));
-day.addEventListener("input", (e) => isDateValid(e));
+year.addEventListener("input", (e) => isDateValid(e))
+month.addEventListener("input", (e) => isDateValid(e))
+day.addEventListener("input", (e) => isDateValid(e))
 
 // Function to update the day of the week
 function updateDayOfWeek() {
@@ -117,18 +117,18 @@ function calculateAge() {
     let inputYear = year.value
   
     // Check if all three inputs are filled
-    if (day && month && year) {
+    if (inputDay && inputMonth && inputYear) {
       // Convert input values to Date object
-      var inputDate = new Date(inputYear, inputMonth - 1, inputDay)
+      let inputDate = new Date(inputYear, inputMonth - 1, inputDay)
   
       // Current date
-      var currentDate = new Date()
+      let currentDate = new Date()
   
       // Calculate the age
-      var ageInMilliseconds = currentDate - inputDate
+      let ageInMilliseconds = currentDate - inputDate
   
       // Calculate years
-      var ageInYears = currentDate.getFullYear() - inputDate.getFullYear()
+      let ageInYears = currentDate.getFullYear() - inputDate.getFullYear()
   
       // Adjust if birthday hasn't occurred yet this year
       if (
