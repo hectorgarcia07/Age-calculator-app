@@ -241,6 +241,10 @@ input:valid + #year-error-msg{
     .submit-button {
         left: 50%;
     }
+
+    .result p {
+        font-size: 2.7rem;
+    }
 }
 
 /* @media (max-width: 767px) {
