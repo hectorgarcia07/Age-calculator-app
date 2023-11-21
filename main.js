@@ -189,3 +189,6 @@ function calculateAge() {
                 `
     }
   }
+
+
+submitBtn.addEventListener('click', (e) => e.preventDefault())
