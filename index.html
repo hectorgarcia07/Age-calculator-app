@@ -20,7 +20,7 @@
             <i class="fas fa-calculator purple"></i> <h1 class="title">Age Pro</h1>  
         </header>
         
-        <form action="#" class="form">
+        <form class="form" name="ageForm">
             <div class="form-top">
                 <div class="input">
                     <label for="day">DAY</label>
@@ -42,16 +42,16 @@
 
             <div class="form-mid">
                 <span class="submit-line"></span>
-                <button type="submit" class="submit-button" aria-label="Submit">
+                <button type="submit" class="submit-button" aria-label="Submit" id="submit">
                     <img src="./assets/images/icon-arrow.svg" alt="" class="logo">
                 </button>
             </div> 
         </form> 
 
         <div class="result">
-            <p id="year-result-el"><span class="purple">--</span>  years</p>
-            <p id="month-result-el"><span class="purple">--</span>  months</p>
-            <p id="day-result-el"><span class="purple">--</span>  days</p>
+            <p><span id="year-result-el" class="purple">--</span>  years</p>
+            <p><span id="month-result-el" class="purple">--</span>  months</p>
+            <p><span id="day-result-el" class="purple">--</span>  days</p>
         </div>        
     </div>
     

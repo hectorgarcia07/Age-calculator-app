@@ -8,6 +8,14 @@ const dayErrorMsg = document.getElementById('day-error-msg')
 const monthErrorMsg = document.getElementById('month-error-msg')
 const yearErrorMsg = document.getElementById('year-error-msg')
 
+//will be used to modify the inner text of the month, year, day
+const day_age = document.getElementById('day-result-el')
+const month_age = document.getElementById('month-result-el')
+const year_age = document.getElementById('year-result-el')
+
+//will be used to listen if a form has been submited
+const submitBtn = document.getElementById('submit')
+
 //function that will be used to determine if date is valid
 function isDateValid(event) {
     console.log("isDateValid",event.target.id)
@@ -53,6 +61,7 @@ function isDateValid(event) {
                 yearErrorMsg.innerText = 'Must be in the past' 
             }
             else{
+                yearErrorMsg.style.visibility = 'hidden'
             }
             break
         
@@ -90,6 +99,49 @@ function isValidYear(year) {
     }
 }
 
-year.addEventListener("input", (e) => isDateValid(e))
-month.addEventListener("input", (e) => isDateValid(e))
-day.addEventListener("input", (e) => isDateValid(e))
+function calculateAge(event) {
+    event.preventDefault()
+
+    console.log(event, "Event")
+
+    const birthDate = `${year.value}-${month.value}-${day.value}`
+
+    const today = new Date();
+    const birth = new Date(birthDate);
+
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        age--;
+    }
+
+    const birthMonth = birth.getMonth() + 1;
+    const birthDay = birth.getDate();
+
+    const currentMonth = today.getMonth() + 1;
+    const currentDay = today.getDate();
+
+    let monthDifference = currentMonth - birthMonth;
+    let dayDifference = currentDay - birthDay;
+
+    if (dayDifference < 0) {
+        monthDifference--;
+        const daysInLastMonth = new Date(today.getFullYear(), currentMonth - 1, 0).getDate();
+        dayDifference += daysInLastMonth;
+    }
+
+    console.log(dayDifference, monthDifference, age)
+
+    day_age.innerText = `${dayDifference}`
+    month_age.innerText = `${monthDifference}`
+    year_age.innerText = `${age}`
+
+    console.log(dayDifference, monthDifference, age)
+}
+
+year.addEventListener("input", isDateValid)
+month.addEventListener("input", isDateValid)
+day.addEventListener("input", isDateValid)
+
+submitBtn.addEventListener('click', (e) => calculateAge(e))
