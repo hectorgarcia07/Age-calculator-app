@@ -1,4 +1,4 @@
-// will be used to access the day, month, and year
+// will be used to access the year, day, and month
 const year = document.getElementById('year-el')
 const month = document.getElementById('month-el')
 const day = document.getElementById('day-el')
