@@ -22,7 +22,6 @@ body {
     background: var(--off-white);
     color: var(--off-black);
     font-family: var(--main-font-family);
-    height: 100vh;
     user-select: none;
 }
 
@@ -43,6 +42,7 @@ body {
     border: none;
     border-radius: 20px 20px 70px 20px;
     overflow: hidden;
+    height: 100vh;
 }
 
 .title {
@@ -101,12 +101,15 @@ label {
 
 .input input::placeholder {
     color: var(--off-black);
-    font-weight: 800;
-    
+    font-weight: 800;    
 }
 
-input:invalid{
+.input input.invalid {
     border-color: red;
+}
+
+.error {
+    border: 1px solid var(--light-red)
 }
 
 #year-el {
@@ -120,9 +123,15 @@ input:invalid{
     appearance: textfield;
 }
 
-#day-error-msg, #month-error-msg, #year-error-msg{
+.dayErrorMsg,
+.monthErrorMsg,
+.yearErrorMsg {
+    display: none;
     color: red;
-    
+}
+
+.showing {
+    display: block;
 }
 
 input:valid + #day-error-msg,
@@ -172,6 +181,7 @@ input:valid + #year-error-msg{
 
 .result {
     margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 .result p {
@@ -182,6 +192,11 @@ input:valid + #year-error-msg{
     margin: 10px auto;
     width: 70%;
     line-height: 1;
+}
+
+.dayBorn {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .footer {
@@ -208,11 +223,16 @@ input:valid + #year-error-msg{
     opacity: 0.6;
 }
 
-/* Media queries for larger screens */
-@media(max-width: 468px) {
+  /* Media query for mobile */.
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media(max-width: 600px) {
     .container {
         width: 375px;
-        height: 100vh;
     }
 
     .title {
@@ -225,5 +245,9 @@ input:valid + #year-error-msg{
 
     .submit-button {
         left: 50%;
+    }
+
+    .result p {
+        font-size: 2.7rem;
     }
 }

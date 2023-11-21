@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="frontend mentor age Calculator">
     <meta name="keywords" content="HTML, CSS, JavaScript, chingu, scrimba, frontend mentor">
@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div class="container">
@@ -24,35 +24,38 @@
             <div class="form-top">
                 <div class="input">
                     <label for="day">DAY</label>
-                    <input name="day" id="day-el" type="text" placeholder="DD" maxlength="2" pattern="\b([1-9]|[12][0-9]|3[01])\b" required title="Please enter a two-digit day">
-                    <p id="day-error-msg">This field is required</p>
+                    <input name="day" id="day-el" class="error" type="text" placeholder="DD" maxlength="2" pattern="\b([1-9]|[12][0-9]|3[01])\b" required title="Please enter a two-digit day">
+                    <p id="day-error-msg" class="dayErrorMsg">Not a valid day</p>
                 </div>
                 <div class="input">
                     <label for="month">MONTH</label>
                     <input name="month" id="month-el" type="text" placeholder="MM" maxlength="2" pattern="\b([1-9]|1[0-2])\b" required title="Please enter a two-digit month">    
-                    <p id="month-error-msg">This field is required</p>
+                    <p id="month-error-msg" class="monthErrorMsg">Not a valid month</p>
             
                 </div>
                 <div class="input">
                     <label for="year">YEAR</label>
                     <input name="year" id="year-el" type="text" placeholder="YYYY" maxlength="4" required title="Please enter a four-digit year">
-                    <p id="year-error-msg">This field is required</p>
+                    <p id="year-error-msg" class="yearErrorMsg">This field is required</p>
                 </div>   
             </div>
 
             <div class="form-mid">
                 <span class="submit-line"></span>
-                <button type="submit" class="submit-button" aria-label="Submit" id="submit">
+                <button type="submit" id="submit-btn" class="submit-button" aria-label="Submit">
                     <img src="./assets/images/icon-arrow.svg" alt="" class="logo">
                 </button>
             </div> 
         </form> 
 
         <div class="result">
-            <p><span id="year-result-el" class="purple">--</span>  years</p>
-            <p><span id="month-result-el" class="purple">--</span>  months</p>
-            <p><span id="day-result-el" class="purple">--</span>  days</p>
-        </div>        
+            <p id="year-result-el"><span class="purple">--</span>  years</p>
+            <p id="month-result-el"><span class="purple">--</span>  months</p>
+            <p id="day-result-el"><span class="purple">--</span>  days</p>
+        </div>
+        
+        <div class="dayBorn"><p>Your were born on a... <span id="day-born" ></span> </p>           
+        </div>
     </div>
     
     <script src="main.js"></script>
@@ -68,5 +71,6 @@
         </div>
     </footer>
     -->
+    <script src="/main.js"></script>
 </body>
 </html>
