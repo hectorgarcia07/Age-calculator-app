@@ -223,7 +223,7 @@ input:valid + #year-error-msg{
     opacity: 0.6;
 }
 
-/* Media query for mobile */
+  /* Media query for mobile */
 @media(max-width: 468px) {
     .container {
         width: 375px;
@@ -240,6 +240,12 @@ input:valid + #year-error-msg{
 
     .submit-button {
         left: 50%;
+    }
+}
+
+/* @media (max-width: 767px) {
+    .container {
+        width: 100%;
     }
 }
 
@@ -263,5 +269,4 @@ input:valid + #year-error-msg{
     .result p {
         font-size: 2.7rem;
     }
-}
-
+} */
